@@ -116,10 +116,22 @@ const loginUser = asyncHandler(async (req, res) => {
         "-password -refreshToken",
     );
 
+    // const options = {
+    //     httpOnly: true,
+    //     secure: true,
+    //     sameSite: "Lax",
+    // };
+
+
+    // Set cookie with minimal options for testing
     const options = {
-        httpOnly: true,
-        secure: true,
-    };
+        httpOnly: true, // Set to false for testing
+        secure: false, // Set to false for local development
+        sameSite: "lax",
+        maxAge: 24 * 60 * 60 * 1000, // 24 hours
+      };
+
+    //   console.log("Response headers:", res.getHeaders());
 
     return res
         .status(200)
@@ -151,10 +163,19 @@ const logoutUser = asyncHandler(async (req, res) => {
         },
     );
 
+    // const options = {
+    //     httpOnly: true,
+    //     secure: true,
+    // };
+
+
+    // Set cookie with minimal options for testing
     const options = {
-        httpOnly: true,
-        secure: true,
-    };
+        httpOnly: true, // Set to false for testing
+        secure: false, // Set to false for local development
+        sameSite: "lax",
+        maxAge: 24 * 60 * 60 * 1000, // 24 hours
+      };
 
     return res
         .status(200)
