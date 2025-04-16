@@ -156,7 +156,11 @@ const getProjectMembers = asyncHandler(async (req, res) => {
             },
         },
         {
-            $unwind: "$user",
+            $unwind: "$user", //unwind use : it turns each element of an array into a separate document
+            // output like this:-
+            // "user": [ 
+            //     { "_id": "u001", "name": "Alice" }
+            //   ],
         },
         {
             $lookup: {
