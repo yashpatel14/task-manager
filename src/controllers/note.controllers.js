@@ -2,8 +2,7 @@ import mongoose, { isValidObjectId } from "mongoose";
 import { asyncHandler } from "../utils/asyncHandler.js";
 import { ApiError } from "../utils/ApiError.js";
 import { ProjectNote } from "../models/note.models.js";
-import { json } from "express";
-import { ApiResponse } from "../utils/ApiResponse";
+import { ApiResponse } from "../utils/ApiResponse.js";
 
 const getNotes = asyncHandler(async(req,res)=>{
     // get all notes
