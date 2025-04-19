@@ -27,9 +27,14 @@ app.use(express.static("public"));
 
 import userRouter from "./routes/auth.routes.js";
 import projectRouter from "./routes/project.routes.js"
+import taskRouter from "./routes/task.routes.js"
+import noteRouter from "./routes/note.routes"
+
 
 //routes declaration
 app.use("/api/v1/users", userRouter);
-app.use("/api/v1/users",projectRouter);
+app.use("/api/v1/projects",projectRouter);
+app.use("/api/v1/taskes",taskRouter);
+app.use("/api/v1/notes",noteRouter);
 
 export default app;

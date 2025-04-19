@@ -5,6 +5,8 @@ import { ApiResponse } from "../utils/ApiResponse.js";
 import { asyncHandler } from "../utils/asyncHandler.js";
 import { ProjectMember } from "../models/projectmember.models.js";
 import { AvailableUserRoles } from "../utils/constants.js";
+import { Task } from "../models/task.models.js";
+import { SubTask } from "../models/subtask.models.js";
 
 const getProjects = asyncHandler(async (req, res) => {
     // get all projects
@@ -126,6 +128,16 @@ const deleteProject = asyncHandler(async (req, res) => {
             "Failed to delete the project please try again",
         );
     }
+
+    await ProjectMember.deleteMany({
+        project:projectId
+    })
+
+    await Task.deleteMany({
+        project:projectId
+    })
+
+    
 
     return res
         .status(200)
