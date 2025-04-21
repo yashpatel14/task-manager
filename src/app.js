@@ -28,7 +28,7 @@ app.use(express.static("public"));
 import userRouter from "./routes/auth.routes.js";
 import projectRouter from "./routes/project.routes.js"
 import taskRouter from "./routes/task.routes.js"
-import noteRouter from "./routes/note.routes"
+import noteRouter from "./routes/note.routes.js"
 
 
 //routes declaration

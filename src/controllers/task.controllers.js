@@ -1,12 +1,12 @@
 import mongoose, { isValidObjectId } from "mongoose";
-import { asyncHandler } from "../utils/asyncHandler";
-import { ApiError } from "../utils/ApiError";
-import { Task } from "../models/task.models";
-import { ApiResponse } from "../utils/ApiResponse";
-import { Project } from "../models/project.models";
-import { User } from "../models/user.models";
-import { UserRolesEnum } from "../utils/constants";
-import { SubTask } from "../models/subtask.models";
+import { asyncHandler } from "../utils/asyncHandler.js";
+import { ApiError } from "../utils/ApiError.js";
+import { Task } from "../models/task.models.js";
+import { ApiResponse } from "../utils/ApiResponse.js";
+import { Project } from "../models/project.models.js";
+import { User } from "../models/user.models.js";
+import { UserRolesEnum } from "../utils/constants.js";
+import { SubTask } from "../models/subtask.models.js";
 
 // get all tasks
 const getTasks = asyncHandler(async (req, res) => {

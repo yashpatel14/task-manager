@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { verifyJWT } from "../middlewares/auth.middleware.js";
-import { createSubTask, createTask, deleteSubTask, getTaskById, getTasks, updateSubTask, updateTask } from "../controllers/task.controllers.js";
+import { createSubTask, createTask, deleteSubTask, deleteTask, getTaskById, getTasks, updateSubTask, updateTask } from "../controllers/task.controllers.js";
 import {upload} from "../middlewares/multer.middleware.js"
 
 const router = Router()
